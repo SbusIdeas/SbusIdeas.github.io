@@ -1,4 +1,4 @@
-let i = 1;
+let k = 1;
 document.querySelector(".slide-sec-" + k).style.display = "block"
 changeCurrentIndicatorColor1()
 

@@ -1,30 +1,30 @@
-let k = 1;
-document.querySelector(".slide-" + k).style.display = "block"
+let i = 1;
+document.querySelector(".slide-" + i).style.display = "block"
 changeCurrentIndicatorColor()
 
 function nextSlide() {
-    document.querySelector(".slide-" + k).style.display = "none"
+    document.querySelector(".slide-" + i).style.display = "none"
     changeIndicatorColor()
-    k++;
+    i++;
 
-    if (k > 4) {
-        k = 1;
+    if (i > 4) {
+        i = 1;
     }
 
     changeCurrentIndicatorColor()
-    document.querySelector(".slide-" + k).style.display = "block"
+    document.querySelector(".slide-" + i).style.display = "block"
 }
 
 function previousSlide() {
-    document.querySelector(".slide-" + k).style.display = "none"
+    document.querySelector(".slide-" + i).style.display = "none"
     changeIndicatorColor()
-    k--;
+    i--;
 
-    if (k < 1) {
-        k = 4;
+    if (i < 1) {
+        i = 4;
     }
     changeCurrentIndicatorColor()
-    document.querySelector(".slide-" + k).style.display = "block"
+    document.querySelector(".slide-" + i).style.display = "block"
 }
 
 document.querySelector(".next").addEventListener("click", () => {
@@ -41,20 +41,20 @@ function changeToCurrentSlide() {
 }
 
 function changeIndicatorColor() {
-    document.querySelector(`.slide-${k}-nav`).style.background = "grey";
+    document.querySelector(`.slide-${i}-nav`).style.background = "grey";
 }
 
 function changeCurrentIndicatorColor() {
-    document.querySelector(`.slide-${k}-nav`).style.background = "#ffffff";
+    document.querySelector(`.slide-${i}-nav`).style.background = "#ffffff";
 }
 
 for (let j=1; j<=4; j++) {
     document.querySelector(`.slide-${j}-nav`).addEventListener("click", () => {
         changeIndicatorColor()
-        document.querySelector(".slide-" + k).style.display = "none"
+        document.querySelector(".slide-" + i).style.display = "none"
 
-        k = j
-        document.querySelector(".slide-" + k).style.display = "block"
+        i = j
+        document.querySelector(".slide-" + i).style.display = "block"
         changeCurrentIndicatorColor()
     })
 }
