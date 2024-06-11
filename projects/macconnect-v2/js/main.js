@@ -45,7 +45,11 @@ function changeIndicatorColor() {
 }
 
 function changeCurrentIndicatorColor() {
-    document.querySelector(`.slide-${i}-nav`).style.background = "#ffffff";
+    if (lightMode) {
+        document.querySelector(`.slide-${i}-nav`).style.background = "#023eb4";
+    } else {
+        document.querySelector(`.slide-${i}-nav`).style.background = "#ffffff";
+    }
 }
 
 for (let j=1; j<=4; j++) {

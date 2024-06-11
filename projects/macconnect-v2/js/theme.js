@@ -6,7 +6,11 @@ let lightMode = false,
     icons2 = document.querySelector(".icon2"),
     icons3 = document.querySelector(".icon3"),
     slide = document.querySelector(".slide"),
-    slide1 = document.querySelector(".slide-sec");
+    slides = document.querySelectorAll(".slide"),
+    slide1 = document.querySelector(".slide-sec"),
+    slides1 = document.querySelectorAll(".slide-sec"),
+    h3Headers = document.querySelectorAll(".slide h3, .slide-sec h3"),
+    months = document.querySelectorAll(".container h3");
 
 document.querySelector(".theme-container").addEventListener("click", () => {
     moveIndicator()
@@ -20,18 +24,27 @@ function moveIndicator() {
         body.style.cssText = "background-color: #ffffff; color: #000000"
         iconColor("#023eb4")
         buttonBackground("#ffffff")
-        slide.style.backgroundColor = "#023eb4"
-        slide1.style.backgroundColor = "#023eb4"
+        changeSlideBackground("#023eb4")
+        h3TextColor("#ffffff")
+        changeCurrentIndicatorColor1()
+        changeCurrentIndicatorColor()
 
-        changeBorderRadius(slide, "#023eb4;")
-        changeBorderRadius(slide1, "#023eb4;")
+        for (let a=0; a<months.length; a++) {
+            months[a].style.color = "#000000"
+        }
     } else {
         toggleBar.style.cssText = "background-color: #ffffff; justify-content: start;";
         body.style.cssText = "background-color: #023eb4; color: #ffffff"
         iconColor("#ffffff")
         buttonBackground("#023eb4")
-        slide.style.backgroundColor = "#ffffff"
-        slide1.style.backgroundColor = "#ffffff"
+        changeSlideBackground("#ffffff")
+        h3TextColor("#000000")
+        changeCurrentIndicatorColor1()
+        changeCurrentIndicatorColor()
+
+        for (let a=0; a<months.length; a++) {
+            months[a].style.color = "#ffffff"
+        }
     }
 }
 
@@ -49,6 +62,19 @@ function buttonBackground(color) {
     document.querySelector(".next-1").style.backgroundColor = color;
 }
 
-function changeBorderRadius(slideNo, color) {
-    slideNo.style.border = "1px solid " + color;
+
+function changeSlideBackground(color) {
+    for (let a=0; a<slides.length; a++) {
+        slides[a].style.backgroundColor = color
+    }
+
+    for (let a=0; a<slides1.length; a++) {
+        slides1[a].style.backgroundColor = color
+    }
+}
+
+function h3TextColor(color) {
+    for (let a=0; a<h3Headers.length; a++) {
+        h3Headers[a].style.color = color
+    }
 }
