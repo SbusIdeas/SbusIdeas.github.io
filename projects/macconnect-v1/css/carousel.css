@@ -53,3 +53,7 @@ h3 {
   height: 20px;
   border-radius: 10px;
 }
+
+.container .month {
+  color: #000000;
+}
