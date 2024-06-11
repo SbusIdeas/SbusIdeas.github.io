@@ -1,0 +1,22 @@
+.theme-container {
+    display: flex;
+    justify-content: end;
+}
+
+.toggle-bar {
+    display: flex;
+    justify-content: start;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.indicator {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
