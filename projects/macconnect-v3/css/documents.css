@@ -1,0 +1,23 @@
+.documents {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.document-container {
+  background-color: #023eb4;
+  border: 1px solid #023eb4;
+  border-radius: 20px;
+  max-width: 350px;
+  margin: auto;
+  margin-bottom: 10px;
+  overflow: hidden
+}
+
+.document-img {
+  width: 350px;
+  height: auto;
+}
+
+.document-container h3 {
+  color: #ffffff;
+}
